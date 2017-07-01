@@ -75,9 +75,25 @@ function main() {
     fi
 
     # Create new .vimrc
+    printf "${BLUE}Generating .vimrc config...${NORMAL}\n"
     touch ~/.vimrc
     echo "\"Import oh-my-vim configurations." >> ~/.vimrc
     echo "source ~/.oh-my-vim/oh-my-vim.vim"  >> ~/.vimrc
+
+    # Finish
+    printf "${GREEN}"
+    echo ''
+    echo '   ____  __       __  ___         _    ________  ___'
+    echo '  / __ \/ /_     /  |/  /_  __   | |  / /  _/  |/  /'
+    echo ' / / / / __ \   / /|_/ / / / /   | | / // // /|_/ / '
+    echo '/ /_/ / / / /  / /  / / /_/ /    | |/ // // /  / /  '
+    echo '\____/_/ /_/  /_/  /_/\__, /     |___/___/_/  /_/   '
+    echo '                     /____/                         ....is now installed!'
+    echo ''
+    echo ''
+    echo 'Please look over the ~/.oh-my-vim directory to select plugins, themes, and options.'
+    echo ''
+    printf "${NORMAL}"
 }
 
 main

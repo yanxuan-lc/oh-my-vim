@@ -1,0 +1,35 @@
+### Java ###
+## Traditional java files
+*.class
+
+## Maven
+target/
+
+### IDE ###
+## JetBrains
+*.iml
+.idea/
+
+## Eclipse
+.project
+.classpath
+.settings/
+
+# VIM
+*.swp
+
+### Commons ###
+# Package file
+*.jar
+*.war
+*.tar
+*.gz
+*.tgz
+*.bz
+*.bz2
+*.zip
+*.rar
+*.7z
+
+# OS files
+.DS_Store
