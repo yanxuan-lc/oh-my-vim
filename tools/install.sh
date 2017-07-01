@@ -20,7 +20,8 @@ function main() {
         YELLOW="$(tput setaf 3)"
         BLUE="$(tput setaf 4)"
         BOLD="$(tput bold)"
-        NORMAL="$(tput sgr0)" else
+        NORMAL="$(tput sgr0)"
+    else
         RED=""
         GREEN=""
         YELLOW=""
@@ -61,7 +62,7 @@ function main() {
 
     # Install oh-my-vim
     printf "${BLUE}Cloning Oh My VIM...${NORMAL}\n"
-    env git clone --depth=1 file:///home/yanxuan.lc/workspace/oh-my-vim ${OMV_HOME} || {
+    env git clone --depth=1 https://github.com/yanxuan-lc/oh-my-vim.git ${OMV_HOME} || {
         printf "${RED}Error: git clone of yanxuan-lc/oh-my-vim.git repo failed.${NORMAL}\n"
         exit 1
     }
