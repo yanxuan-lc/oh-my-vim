@@ -53,6 +53,23 @@ function main() {
         exit 1
     }
 
+    # Backup vim configurations
+    mkdir ~/.vim.origin
+
+    # Backup previous ~/.vimrc
+    printf "${BLUE}Looking for an existing .vimrc config...${NORMAL}\n"
+    if [ -f ~/.vimrc ] || [ -h ~/.vimrc ]; then
+        printf "${YELLOW}Found ~/.vimrc.${NORMAL} ${GREEN}Backing up to ~/.vim.origin${NORMAL}\n";
+        mv ~/.vimrc ~/.vim.origin;
+    fi
+
+    # Backup previous ~/.vim/
+    printf "${BLUE}Looking for an existing .vim folder...${NORMAL}\n"
+    if [ -d ~/.vim ]; then
+        printf "${YELLOW}Found ~/.vim.${NORMAL} ${GREEN}Backing up to ~/.vim.origin${NORMAL}\n"
+        mv ~/.vim ~/.vim.origin
+    fi
+
     # Install Vundle.Vim
     printf "${BLUE}Cloning Vundle.Vim...${NORMAL}\n"
     env git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim || {
@@ -67,18 +84,14 @@ function main() {
         exit 1
     }
 
-    # Backup previous .vimrc
-    printf "${BLUE}Looking for an existing vim config...${NORMAL}\n"
-    if [ -f ~/.vimrc ] || [ -h ~/.vimrc ]; then
-        printf "${YELLOW}Found ~/.vimrc.${NORMAL} ${GREEN}Backing up to ~/.vimrc.pre-omv${NORMAL}\n";
-        mv ~/.vimrc ~/.vimrc.pre-omv;
-    fi
-
     # Create new .vimrc
     printf "${BLUE}Generating .vimrc config...${NORMAL}\n"
     touch ~/.vimrc
-    echo "\"Import oh-my-vim configurations." >> ~/.vimrc
+    echo "\" Import oh-my-vim configurations." >> ~/.vimrc
     echo "source ~/.oh-my-vim/oh-my-vim.vim"  >> ~/.vimrc
+
+    # Install vim plugins.
+    vim +PluginInstall +qall
 
     # Finish
     printf "${GREEN}"

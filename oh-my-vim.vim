@@ -43,4 +43,8 @@ call PluginEnable('git')
 call PluginEnable('markdown')
 
 " choose your favorite theme
-call ThemeEnable('molokai')
+call ThemeEnable('desert')
+" more color scheme: https://github.com/flazz/vim-colorschemes/tree/master/colors
+" call ThemeEnable('molokai')
+" call ThemeEnable('wuye')
+" call ThemeEnable('woju')
