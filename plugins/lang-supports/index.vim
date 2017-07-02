@@ -1,3 +1,11 @@
+"
+" Plugin to support non-ascii languages.
+".
+" @author yanxuan.lc
+" @version 1.0.0
+" @since 1.0.0
+"
+
 " Global encoding
 set encoding=utf-8
 

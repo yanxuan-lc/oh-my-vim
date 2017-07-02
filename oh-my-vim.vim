@@ -1,9 +1,17 @@
-" Define global variables
-let $root = '~/.oh-my-vim'
-let $plugins = $root.'/plugins'
-let $themes = '$root/themes'
+"
+" Oh My VIM root configurations.
+"
+" @author yanxuan.lc
+" @version 1.0.0
+" @since 1.0.0
+"
 
-" Configuration Vundle.Vim
+" define global variables
+let g:root = '~/.oh-my-vim'
+let g:plugins = g:root . '/plugins'
+let g:themes = g:root . '/themes'
+
+" enable vundle.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -16,22 +24,22 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Install plugins
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/Emmet.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'AutoClose'
-Plugin 'L9'
+" include OMV plugin configurations
+execute 'source ' . g:plugins . '/index.vim'
+
+" include OMV theme configurations.
+execute 'source ' . g:themes . '/index.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Language supports
-source $plugins/lang-supports/index.vim
+" enable your favorite plugins
+call PluginEnable('lang-supports')
+call PluginEnable('toolkit')
+call PluginEnable('indent')
+call PluginEnable('git')
+call PluginEnable('markdown')
 
-" Development supports
-source $plugins/development/index.vim
-
-" Theme
-source $themes/desert/index.vim
+" choose your favorite theme
+call ThemeEnable('molokai')
