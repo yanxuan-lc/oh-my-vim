@@ -22,7 +22,3 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 set showmatch
 set autoindent
 set smartindent
-set foldenable
-set foldmethod=syntax
-set foldcolumn=5
-set foldlevel=2

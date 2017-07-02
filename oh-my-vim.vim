@@ -35,6 +35,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " enable your favorite plugins
+call PluginEnable('common')
 call PluginEnable('lang-supports')
 call PluginEnable('toolkit')
 call PluginEnable('indent')

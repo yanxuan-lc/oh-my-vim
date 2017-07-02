@@ -6,7 +6,9 @@
 " @since 1.0.0
 " 
 if suffix == "htm" || "html" || "shtml"
-    tabstop=2
-    shiftwidth=2
-    softtabstop=2
+
+    " indention
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
 endif

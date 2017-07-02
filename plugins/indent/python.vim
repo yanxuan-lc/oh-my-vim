@@ -6,6 +6,8 @@
 " @since 1.0.0
 " 
 if suffix == "py"
+
+    " indention
     set tabstop=2
     set shiftwidth=2
     set softtabstop=2

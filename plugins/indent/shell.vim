@@ -6,6 +6,8 @@
 " @since 1.0.0
 " 
 if suffix == "sh" || suffix == "bash" || suffix == "zsh"
+
+    " indention
     set tabstop=2
     set shiftwidth=2
     set softtabstop=2
