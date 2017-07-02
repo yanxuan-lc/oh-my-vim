@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 #
 # Script for install oh-my-vim automatically.
 #
@@ -59,15 +60,15 @@ function main() {
     # Backup previous ~/.vimrc
     printf "${BLUE}Looking for an existing .vimrc config...${NORMAL}\n"
     if [ -f ~/.vimrc ] || [ -h ~/.vimrc ]; then
-        printf "${YELLOW}Found ~/.vimrc.${NORMAL} ${GREEN}Backing up to ~/.vim.origin${NORMAL}\n";
-        mv ~/.vimrc ~/.vim.origin;
+        printf "${YELLOW}Found ~/.vimrc.${NORMAL} ${GREEN}Backing up to ~/.vim.origin/.vimrc${NORMAL}\n";
+        mv ~/.vimrc ~/.vim.origin/.vimrc;
     fi
 
     # Backup previous ~/.vim/
     printf "${BLUE}Looking for an existing .vim folder...${NORMAL}\n"
     if [ -d ~/.vim ]; then
-        printf "${YELLOW}Found ~/.vim.${NORMAL} ${GREEN}Backing up to ~/.vim.origin${NORMAL}\n"
-        mv ~/.vim ~/.vim.origin
+        printf "${YELLOW}Found ~/.vim.${NORMAL} ${GREEN}Backing up to ~/.vim.origin/.vim${NORMAL}\n"
+        mv ~/.vim ~/.vim.origin/.vim
     fi
 
     # Install Vundle.Vim
@@ -95,17 +96,17 @@ function main() {
 
     # Finish
     printf "${GREEN}"
-    echo ''
-    echo '   ____  __       __  ___         _    ________  ___'
-    echo '  / __ \/ /_     /  |/  /_  __   | |  / /  _/  |/  /'
-    echo ' / / / / __ \   / /|_/ / / / /   | | / // // /|_/ / '
-    echo '/ /_/ / / / /  / /  / / /_/ /    | |/ // // /  / /  '
-    echo '\____/_/ /_/  /_/  /_/\__, /     |___/___/_/  /_/   '
-    echo '                     /____/                         ....is now installed!'
-    echo ''
-    echo ''
-    echo 'Please look over the ~/.oh-my-vim directory to select plugins, themes, and options.'
-    echo ''
+    echo ""
+    echo "   ____  __       __  ___         _    ________  ___"
+    echo "  / __ \/ /_     /  |/  /_  __   | |  / /  _/  |/  /"
+    echo " / / / / __ \   / /|_/ / / / /   | | / // // /|_/ / "
+    echo "/ /_/ / / / /  / /  / / /_/ /    | |/ // // /  / /  "
+    echo "\____/_/ /_/  /_/  /_/\__, /     |___/___/_/  /_/   "
+    echo "                     /____/                         ....is now installed!"
+    echo ""
+    echo ""
+    echo "Please look over the ~/.oh-my-vim directory to select plugins, themes, and options."
+    echo ""
     printf "${NORMAL}"
 }
 
